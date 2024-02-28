@@ -1,3 +1,4 @@
+import kr.or.kosa.Emp;
 
 public class Ex01 {
 
@@ -7,6 +8,38 @@ public class Ex01 {
 //		value = 10;
 //		int result = value + 100;
 //		System.out.println(result);
+		
+		Emp emp; // emp 변수 + 타입 (Emp 타입)
+		emp = new Emp();
+		System.out.println(emp);
+		
+		Emp emp2 = emp;
+		System.out.println(emp == emp2);
+		
+		Emp emp3 = new Emp();
+		// Emp라는 타입을 갖는 emp3이라는 지역변수 생성
+		// new라는 연산자를 통해서 메모리(heap)에 올리고 그 주소를 할당받는다.
+		// emp3 주소값으로 초기화된다.
+		
+		emp3.empno = 1000;
+		// .주소를 찾는 연산자를 통해서 주소에 접근하고 empno 값을 1000으로 할당
+		System.out.println(emp3.empno);
+		
+		int a, b, c; // 같은 타입의 변수를 나열 >> 개발자 >> 배열(Array) >> int[]
+		// 초기화가 안되어 있다.
+		a = 100;
+		b = 200;
+		c = 300;
+		// 사용 가능
+		
+		// int a = 200; 같은 지역 안에 같은 변수명 안되요.
+		
+		int result = a + b + c; // 초기화
+		
+		int k = 100;
+		int y = k;
+		y = 200;
+		
 	}
 
 }
