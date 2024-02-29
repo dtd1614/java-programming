@@ -18,8 +18,6 @@ public class Event {
 		
 		String prizes = "";
 		
-		point = 600;
-		
 		switch(point) {
 			case 1000 : prizes += "티비, ";
 			case 900 : prizes += "노트북, ";
@@ -30,7 +28,5 @@ public class Event {
 		}
 		
 		System.out.println("고객님의 점수는 " + point + "입니다. " + prizes + "에 당첨되셨습니다.");
-
 	}
-
 }
