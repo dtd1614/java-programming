@@ -32,5 +32,4 @@ public class Ex01_Ref_Type {
 			System.out.println("서로 다른 집에 살아요 ㅠㅠ");
 		}
 	}
-
 }
