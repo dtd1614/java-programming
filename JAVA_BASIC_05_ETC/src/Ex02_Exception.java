@@ -1,5 +1,6 @@
 
 public class Ex02_Exception {
+	
 
 	public static void main(String[] args) {
 		System.out.println("main");
@@ -14,6 +15,7 @@ public class Ex02_Exception {
 		} catch (ArithmeticException e) {
 			System.out.println("문제가 발생했어요");
 		}
+		
 	}
 
 }

@@ -12,10 +12,12 @@ public class Cinema {
 	private Scanner scanner;
 	
 	public Cinema(String name, String location) {
+		this.name = name;
+		this.location = location;
 		seats = new String[4][5];
 		for (int i = 0; i < seats.length; i++) {
 			for (int j = 0; j < seats[i].length; j++) {
-				seats[i][j] = Integer.toString(i+1) + "-" + Integer.toString(j+1);
+				seats[i][j] = (i+1) + "-" + (j+1);
 			}
 		}
 		scanner = new Scanner(System.in);
@@ -122,9 +124,8 @@ public class Cinema {
 	
 	private String makeReservation(String seat) {
 		int[] seatAddress = getSeatAddress(seat);
-		String reservationNum = Integer.toString(seatAddress[0]+1) + 
-				Integer.toString(seatAddress[1]+1) +
-				((int)(Math.random() * 899) + 100);
+		String reservationNum = "" + (seatAddress[0] + 1) + 
+								(seatAddress[1] + 1) + ((int)(Math.random() * 899) + 100);
 		seats[seatAddress[0]][seatAddress[1]] = reservationNum;
 		return reservationNum;
 	}
