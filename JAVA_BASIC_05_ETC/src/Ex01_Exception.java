@@ -19,6 +19,9 @@
  }
  
  */
+
+import lombok.Data;
+
 public class Ex01_Exception {
 
 	public static void main(String[] args) {
@@ -37,7 +40,8 @@ public class Ex01_Exception {
 			e.printStackTrace();
 			// 처리 여부
 			// 문제상황 전달 (log 기록, 메일)
-		}
+
+}
 		System.out.println("main end");
 		
 	}
