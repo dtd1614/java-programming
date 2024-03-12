@@ -52,8 +52,5 @@ public class Ex01_Vector {
 		v3.add("B"); // 열한번째 >> 방의 크기 20개 생성 >> 이동
 		
 		System.out.println(v3.capacity()); // 20
-		
-		
-		
 	}
 }

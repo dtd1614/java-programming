@@ -15,5 +15,7 @@ public class Ex03_ArrayList {
 		// add 함수는 순차적으로 데이터를 추가하는 함수
 		
 		System.out.println(alist.toString());
+		
+		alist.add(0, 4444); // 덮어쓰기 안되고 뒤로 밀려남
 	}
 }
