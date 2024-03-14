@@ -20,5 +20,8 @@ public class Ex13_Map_Generic {
 		Map<String, String> sts = new HashMap<>();
 		sts.put("A", "AAAA");
 		System.out.println(sts.get("A"));
+		
+		Map<String, Student> smap = new HashMap<>();
+		smap.put("hong", new Student(100, 50, 0, "홍길동"));
 	}
 }
