@@ -2,81 +2,82 @@ package quiz.bank;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
-class Bank {
-	//private Account[] accounts;]
-	private List<Account> accounts;
-//	private int totalAccount;
-	
-	public Bank() {
-		this.accounts = new ArrayList<>();
-//		this.totalAccount = 0;
-	}
-	
-	public void addAccount(String accountNo, String name) {
-		this.accounts.add(new Account(accountNo, name)); 
-	}
-	
-	public Account getAccount(String accountNo) {
-		return null;
-	}
-	
-	public List<Account> findAccount(String name) {
-		return accounts;
-	}
-	
-	public List<Account> getAccounts() {
-		return null;
-	}
-	
-	public int getTotalAccount() {
-		return 0;
-	}
-}
-
-class Account {
-	
-	private String accountNo;
-	private String name;
-	private long balance;
-//	private Transaction[] transactions;
-	private List<Transaction> transactions;
-	
-	public Account(String accountNo2, String name) {
-		this.transactions = new ArrayList<>();
-		this.accountNo = accountNo2;
-		this.name = name;
-	}
-
-	public void deposit(long amount) {
-	}
-	
-	public void withdraw(long amount) {
-		
-	}
-	
-	public long getBalance() {
-		return 0;
-	}
-	
-	public List<Transaction> getTransactions() {
-		return null;
-	}
-
-}
-
-class Transaction {
-	
-	private String transactionDate;
-	private String transactionTime;
-	private String kind;
-	private long amount;
-	private long balance;
-}
 
 public class BankProgram {
 	
 	public static void main(String[] args) {
-		
+		Bank bank = new Bank();
+		Scanner sc = new Scanner(System.in);
+		while(true) {
+			System.out.println("1. 전체 계좌 목록\t2. 계좌 등록\t3.소유주명으로 계좌 조회\t4.입금\t5.출금\t6.거래내역 조회\t0.종료");
+			switch(sc.nextLine()) {
+				case "1" :
+					List<Account> accounts = bank.getAccounts();
+					printAccounts(accounts);
+					break;
+				
+				case "2" :
+					System.out.print("계좌 번호 : ");
+					String accountno = sc.nextLine();
+					System.out.print("계좌 소유주 : ");
+					String name = sc.nextLine();
+					System.out.print("잔액 : ");
+					long balance = Integer.parseInt(sc.nextLine());
+					bank.addAccount(accountno, name, balance);	
+					break;
+				case "3" :
+					System.out.print("계좌 소유주 : ");
+					name = sc.nextLine();
+					printAccounts(bank.findAccount(name));
+					break;
+				case "4" :
+					System.out.print("계좌 번호 : ");
+					accountno = sc.nextLine();
+					System.out.print("금액 : ");
+					long amount = Integer.parseInt(sc.nextLine());
+					
+					Account account = bank.getAccount(accountno);
+					if(account == null) break;
+					account.deposit(amount);
+					System.out.printf("입금 금액: %d, 잔액 : %d\n", amount, account.getBalance());
+					break;
+				case "5" :
+					System.out.print("계좌 번호 : ");
+					accountno = sc.nextLine();
+					System.out.print("금액 : ");
+					amount = Integer.parseInt(sc.nextLine());
+					account = bank.getAccount(accountno);
+					if(account == null) break;
+					if(account.withdraw(amount))
+						System.out.printf("출금 금액: %d, 잔액 : %d\n", amount, account.getBalance());
+					break;
+				case "6" :
+					System.out.print("계좌 번호 : ");
+					accountno = sc.nextLine();
+					account = bank.getAccount(accountno);
+					if(account == null) break;
+					List<Transaction> transactions = account.getTransactions();
+					printTransactions(transactions);
+					break;
+				case "0" :
+					System.out.println("종료합니다.");
+					return;
+				default : 
+			}
+		}
+	}
+	
+	public static void printTransactions(List<Transaction> transactions) {
+		for(Transaction transaction : transactions) {
+			System.out.printf("[금액 : %d(%s), 잔액 : %d, 시간 : %s]\n", transaction.getAmount(), transaction.getKind(), transaction.getBalance(), transaction.getTransactionDateTime());
+		}
+	}
+
+	public static void printAccounts(List<Account> accounts) {
+		for(Account account : accounts) {
+			System.out.printf("[계좌번호 : %s, 소유자명 : %s, 잔액 : %d]\n", account.getAccountNo(), account.getName(), account.getBalance());
+		}
 	}
 }

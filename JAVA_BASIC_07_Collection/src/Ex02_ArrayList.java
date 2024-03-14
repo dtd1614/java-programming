@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Ex03_ArrayList {
+public class Ex02_ArrayList {
 	
 	public static void main(String[] args) {
 		ArrayList alist = new ArrayList();
