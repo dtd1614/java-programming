@@ -1,4 +1,4 @@
-package abstract_factory.factory;
+package abstract_factory1.factory;
 
 public abstract class Link extends Item{
 	protected String url;

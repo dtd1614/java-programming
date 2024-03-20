@@ -1,7 +1,7 @@
-package abstract_factory.listfactory;
+package abstract_factory1.listfactory;
 
-import abstract_factory.factory.Item;
-import abstract_factory.factory.Tray;
+import abstract_factory1.factory.Item;
+import abstract_factory1.factory.Tray;
 
 public class ListTray extends Tray{
 

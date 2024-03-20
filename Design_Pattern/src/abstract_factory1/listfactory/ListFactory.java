@@ -1,9 +1,9 @@
-package abstract_factory.listfactory;
+package abstract_factory1.listfactory;
 
-import abstract_factory.factory.Factory;
-import abstract_factory.factory.Link;
-import abstract_factory.factory.Page;
-import abstract_factory.factory.Tray;
+import abstract_factory1.factory.Factory;
+import abstract_factory1.factory.Link;
+import abstract_factory1.factory.Page;
+import abstract_factory1.factory.Tray;
 
 public class ListFactory extends Factory{
 

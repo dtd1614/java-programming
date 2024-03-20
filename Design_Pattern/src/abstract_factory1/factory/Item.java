@@ -1,4 +1,4 @@
-package abstract_factory.factory;
+package abstract_factory1.factory;
 
 public abstract class Item {
 	protected String caption;

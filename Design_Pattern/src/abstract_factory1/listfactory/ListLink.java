@@ -1,6 +1,6 @@
-package abstract_factory.listfactory;
+package abstract_factory1.listfactory;
 
-import abstract_factory.factory.Link;
+import abstract_factory1.factory.Link;
 
 public class ListLink extends Link{
 

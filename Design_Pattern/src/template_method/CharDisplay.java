@@ -25,6 +25,7 @@ public class CharDisplay extends AbstractDisplay{
 		// 종료 문자열 ">>" 를 표시한다.
 		System.out.println(">>");
 	}
+	
 }
 
 
