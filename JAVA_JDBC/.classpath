@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/dtd1614/Desktop/데이터베이스/ojdbc6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/dtd1614/eclipse/jee-2022-06/eclipse/lombok.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
