@@ -12,6 +12,7 @@ JDBC 작업
 기능 -> 자주 (static) -> overloading(편하게) -> 다형성 (유연하게)
  */
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -81,6 +82,16 @@ public class ConnectionHelper {
 		if(pstmt != null) {
 			try {
 				pstmt.close();
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
+		}
+	}
+	
+	public static void close(CallableStatement cstmt) {
+		if(cstmt != null) {
+			try {
+				cstmt.close();
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
 			}
